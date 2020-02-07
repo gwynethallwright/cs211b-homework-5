@@ -3,9 +3,10 @@ h = 0.01;
 % Select initial and final times
 t_0 = 0;
 t_f = 1;
-% Select initial conditions
+% Select initial condition
 y_0 = transpose([1.0, 2.0]);
-y_1 = transpose([1.0, 2.0]);
+% Use FEM to get second initial condition
+y_1 = forward_euler_step(y_0, h, t_0, @f_1);
 % Evolve and plot solutions
 for i = 1:numel(h)
     % The function evolve_ode returns the desired solution at all times 
