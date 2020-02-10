@@ -10,5 +10,6 @@ function y = evolve_ode(h, t_0, t_f, y_0, y_1, fcnHandle, tol)
         % Newton iterator to approximate the solution at the next step, 
         % after which it uses the theta method to correct the solution
         [y(:,i), r] = calculate_next(y(:,i-2:i-1), h, t_0+i*h, fcnHandle, tol);
+        h = r*h;
     end
 end

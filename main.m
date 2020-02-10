@@ -1,7 +1,7 @@
 % Select initial step sizes
 h = 0.01;
 % Select tolerance
-tol = 1e-4;
+tol = 1e-5;
 % Select initial and final times
 t_0 = 0;
 t_f = 1;
