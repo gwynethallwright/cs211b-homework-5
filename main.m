@@ -1,5 +1,7 @@
-% Select step sizes
+% Select initial step sizes
 h = 0.01;
+% Select tolerance
+tol = 1e-4;
 % Select initial and final times
 t_0 = 0;
 t_f = 1;
@@ -11,7 +13,7 @@ y_1 = forward_euler_step(y_0, h, t_0, @f_1);
 for i = 1:numel(h)
     % The function evolve_ode returns the desired solution at all times 
     % given the initial condition, start time, end time and step size
-    y = evolve_ode(h(i), t_0, t_f, y_0, y_1, @f_1);
+    y = evolve_ode(h(i), t_0, t_f, y_0, y_1, @f_1, tol);
     t = 0:h(i):t_f;
     figure;
     % Plot and format plot
