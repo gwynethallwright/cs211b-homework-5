@@ -8,7 +8,6 @@ function [u, r] = calculate_next(y, h, t, fcnHandle, tol)
     % If the LTE exceeds some fraction of the tolerance, compute r to
     % adjust the step size
     if lte >= frac*tol
-        print('here');
         r = power(frac*tol/lte, 1.0/3.0);
     else
         r = 1;

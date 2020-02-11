@@ -24,4 +24,6 @@ function [y, t] = evolve_ode(h, t_0, t_f, y_0, y_1, fcnHandle, tol)
         end
         h = r*h;
     end
+    y = y(:,~isnan(t));
+    t = t(~isnan(t));
 end
