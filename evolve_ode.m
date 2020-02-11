@@ -1,14 +1,18 @@
-function [y, t] = evolve_ode(h, t_0, t_f, y_0, y_1, fcnHandle, tol)
+function [y, t, steps] = evolve_ode(h, t_0, t_f, y_0, y_1, fcnHandle, tol)
     % Array to store solution
     % Note: we overestimate the array size
     y = nan(2, 1e3);
     % Array to store points at which solution is sampled
     t = nan(1, 1e3);
+    % Array to store step sizes
+    steps = nan(1, 1e3);
     % Add initial values
     y(:,1) = y_0;
     y(:,2) = y_1;
     t(1) = t_0;
     t(2) = t_0 + h;
+    steps(1) = h;
+    steps(2) = h;
     % Keep track of index in array
     i = 3;
     t_current = t_0;
@@ -20,10 +24,12 @@ function [y, t] = evolve_ode(h, t_0, t_f, y_0, y_1, fcnHandle, tol)
         if r == 1
             t(i) = t(i-1) + h;
             t_current = t_current + h;
+            steps(i) = h;
             i = i+1;
         end
         h = r*h;
     end
     y = y(:,~isnan(t));
     t = t(~isnan(t));
+    steps = steps(~isnan(steps));
 end
