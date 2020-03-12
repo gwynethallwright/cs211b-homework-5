@@ -20,8 +20,8 @@ function [y, t, steps] = evolve_ode(h, t_0, t_f, y_0, y_1, fcnHandle, tol)
         % The function calculate_next_theta returns the desired solution at  
         % the next time step using AB as the predictor and AM as the
         % corrector
-        [y(:,i), r] = calculate_next(y(:,i-2:i-1), h, t(i-1), fcnHandle, tol);
-        if r == 1
+        [y(:,i), r, redo] = calculate_next(y(:,i-2:i-1), h, t(i-1), fcnHandle, tol);
+        if redo == 0
             t(i) = t(i-1) + h;
             t_current = t_current + h;
             steps(i) = h;
