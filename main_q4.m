@@ -2,7 +2,7 @@
 dt = 0.01;
 dy = 0.005;
 % Select tolerance
-tol = 1e-6;
+tol = 1e-3;
 % Select initial and final times
 t_0 = 0;
 t_f = 1;

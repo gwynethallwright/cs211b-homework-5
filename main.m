@@ -39,7 +39,7 @@ xlim([0, 1]);
 figure;
 plot(t, steps);
 ax = gca;
-ylim([0, 5e-2]);
+ylim([0, 0.3]);
 xlim([0, 1]);
 ax.FontSize = 20;
 xlabel('$t$', 'Interpreter', 'latex');
@@ -72,7 +72,7 @@ ax.FontSize = 20;
 xlabel('$t$', 'Interpreter', 'latex');
 ylabel('$h$', 'Interpreter', 'latex');
 title('Step Size $h$ over Time $t$', 'Interpreter', 'latex');
-ylim([0, 5e-2]);
+ylim([0, 0.3]);
 xlim([0, 100]);
 
 % PROBLEM 3
@@ -95,5 +95,5 @@ ax.FontSize = 20;
 xlabel('$t$', 'Interpreter', 'latex');
 ylabel('$h$', 'Interpreter', 'latex');
 title('Step Size $h$ over Time $t$', 'Interpreter', 'latex');
-ylim([0, 5e-2]);
+ylim([0, 0.3]);
 xlim([0, 11]);
