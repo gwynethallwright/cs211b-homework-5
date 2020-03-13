@@ -1,8 +1,8 @@
 % Select initial step sizes
-dt = 0.01;
+dt = 1e-3;
 dy = 0.003;
 % Select tolerance
-tol = 1e-3;
+tol = 1e-6;
 % Select initial and final times
 t_0 = 0;
 t_f = 1;
@@ -28,4 +28,12 @@ xlabel('$x$', 'Interpreter', 'latex');
 ylabel('$y$', 'Interpreter', 'latex');
 title('Numerical Evolution of $y$', 'Interpreter', 'latex');
 xlim([0, 1.5]);
-%ylim([0, 2]);
+figure;
+
+plot(t, steps);
+ax = gca;
+ax.FontSize = 20;
+xlabel('$t$', 'Interpreter', 'latex');
+ylabel('$h$', 'Interpreter', 'latex');
+title('Step Size $h$ over Time $t$', 'Interpreter', 'latex');
+xlim([0, 1]);
