@@ -24,6 +24,7 @@ w_1 = forward_euler_step(w_0, h, t_0, @f_3);
 % given the initial condition, start time, end time and initial step size
 
 % PROBLEM 1
+
 [y, t, steps] = evolve_ode(h, t_0, t_f, y_0, y_1, @f_1, tol);
 figure;
 plot(t, y(1,:));
@@ -37,9 +38,19 @@ ylabel('$y$', 'Interpreter', 'latex');
 title('Numerical Evolution of $y$', 'Interpreter', 'latex');
 xlim([0, 1]);
 figure;
+
+plot(y(1,:), y(2,:));
+ax = gca;
+ax.FontSize = 20;
+xlabel('$y_2$', 'Interpreter', 'latex');
+ylabel('$y_1$', 'Interpreter', 'latex');
+title('Numerical Evolution of $y$', 'Interpreter', 'latex');
+xlim([0.36, 1]);
+figure;
+
 plot(t, steps);
 ax = gca;
-ylim([0, 0.3]);
+ylim([0, 0.06]);
 xlim([0, 1]);
 ax.FontSize = 20;
 xlabel('$t$', 'Interpreter', 'latex');
@@ -47,6 +58,7 @@ ylabel('$h$', 'Interpreter', 'latex');
 title('Step Size $h$ over Time $t$', 'Interpreter', 'latex');
 
 % PROBLEM 2
+
 [u, t_2, steps_2] = evolve_ode(h, t_0, t_f_2, u_0, u_1, @f_2, tol);
 figure;
 plot(t_2, u(1,:));
@@ -60,6 +72,15 @@ ylabel('$y$', 'Interpreter', 'latex');
 title('Numerical Evolution of $y$', 'Interpreter', 'latex');
 xlim([0, 100]);
 figure;
+
+plot(u(1,:), u(2,:));
+ax = gca;
+ax.FontSize = 20;
+xlabel('$y_2$', 'Interpreter', 'latex');
+ylabel('$y_1$', 'Interpreter', 'latex');
+title('Numerical Evolution of $y$', 'Interpreter', 'latex');
+figure;
+
 plot(u(1,:), (u(2,:)));
 ax = gca;
 ax.FontSize = 20;
@@ -76,6 +97,7 @@ ylim([0, 0.3]);
 xlim([0, 100]);
 
 % PROBLEM 3
+
 [w, t_3, steps_3] = evolve_ode(h, t_0, t_f_3, w_0, w_1, @f_3, tol);
 figure;
 plot(t_3, w(1,:));
@@ -89,11 +111,20 @@ ylabel('$y$', 'Interpreter', 'latex');
 title('Numerical Evolution of $y$', 'Interpreter', 'latex');
 xlim([0, 11]);
 figure;
+
+plot(w(1,:), w(2,:));
+ax = gca;
+ax.FontSize = 20;
+xlabel('$y_2$', 'Interpreter', 'latex');
+ylabel('$y_1$', 'Interpreter', 'latex');
+title('Numerical Evolution of $y$', 'Interpreter', 'latex');
+figure;
+
 plot(t_3, steps_3);
 ax = gca;
 ax.FontSize = 20;
 xlabel('$t$', 'Interpreter', 'latex');
 ylabel('$h$', 'Interpreter', 'latex');
 title('Step Size $h$ over Time $t$', 'Interpreter', 'latex');
-ylim([0, 0.3]);
+ylim([0, 0.15]);
 xlim([0, 11]);
