@@ -1,7 +1,7 @@
 % Select initial step sizes
 h = 0.01;
 % Select tolerance
-tol = 1e-3;
+tol = 1e-6;
 % Select initial and final times
 t_0 = 0;
 t_f = 1;
@@ -50,7 +50,8 @@ figure;
 
 plot(t, steps);
 ax = gca;
-ylim([0, 0.06]);
+% ylim([0, 0.06]);
+ylim([0, 0.01]);
 xlim([0, 1]);
 ax.FontSize = 20;
 xlabel('$t$', 'Interpreter', 'latex');
@@ -93,7 +94,8 @@ ax.FontSize = 20;
 xlabel('$t$', 'Interpreter', 'latex');
 ylabel('$h$', 'Interpreter', 'latex');
 title('Step Size $h$ over Time $t$', 'Interpreter', 'latex');
-ylim([0, 0.3]);
+% ylim([0, 0.3]);
+ylim([0, 0.01]);
 xlim([0, 100]);
 
 % PROBLEM 3
@@ -126,5 +128,6 @@ ax.FontSize = 20;
 xlabel('$t$', 'Interpreter', 'latex');
 ylabel('$h$', 'Interpreter', 'latex');
 title('Step Size $h$ over Time $t$', 'Interpreter', 'latex');
-ylim([0, 0.15]);
+% ylim([0, 0.15]);
+ylim([0, 0.015]);
 xlim([0, 11]);
