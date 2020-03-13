@@ -23,7 +23,9 @@ for i = 1:6
 end
 ax = gca;
 ax.FontSize = 20;
+legend({'$t=0$','$t=0.25$', '$t=0.5$', '$t=0.6$', '$t=0.8$', '$t=1.0$'},'Interpreter', 'latex');
 xlabel('$x$', 'Interpreter', 'latex');
 ylabel('$y$', 'Interpreter', 'latex');
 title('Numerical Evolution of $y$', 'Interpreter', 'latex');
-xlim([0, 1]);
+xlim([0, 1.5]);
+%ylim([0, 2]);
